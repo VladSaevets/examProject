@@ -1,0 +1,12 @@
+form div{
+    margin-bottom: 17px;
+}
+
+form.content{
+    width: 450px;
+    flex-direction: row;
+}
+
+form{
+    margin-left: 25px;
+}

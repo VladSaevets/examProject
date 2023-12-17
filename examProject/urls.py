@@ -22,4 +22,7 @@ from project import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('registration/', views.registration),
+    path('authorization/', views.authorization),
+    path('cabinet/', views.cabinet),
 ]
