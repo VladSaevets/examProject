@@ -5,25 +5,29 @@
 {% block content %}
     <form action="" method="post" class="content">
         <div class="form-group">
-            <label for="InputName">Имя</label>
-            <input type="text" class="form-control" id="InputName" placeholder="Введите имя">
+            <label for="InputNick">Имя пользователя</label>
+            <input type="text" class="form-control" name="nick" id="InputNick" placeholder="Введите имя пользователя">
         </div>
         <div class="form-group">
-            <label for="InputSurName">Фамилия</label>
-            <input type="text" class="form-control" id="InputSurName" placeholder="Введите фамилию">
+            <label for="InputName">Имя</label>
+            <input type="text" class="form-control" name="name" id="InputName" placeholder="Введите имя">
+        </div>
+        <div class="form-group">
+            <label for="InputSurname">Фамилия</label>
+            <input type="text" class="form-control" name="surname" id="InputSurname" placeholder="Введите фамилию">
         </div>
         <div class="form-group">
             <label for="InputEmail">Адрес электронной почты</label>
-            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Введите Вашу почту">
+            <input type="email" class="form-control" name="email" id="InputEmail" aria-describedby="emailHelp" placeholder="Введите Вашу почту">
             <small id="emailHelp" class="form-text text-muted">Ваша почта будет передана только в нашу базу данных :)</small>
         </div>
         <div class="form-group">
             <label for="InputPassword">Пароль</label>
-            <input type="password" class="form-control" id="InputPassword" placeholder="Введите пароль">
+            <input type="password" class="form-control" name="password" id="InputPassword" placeholder="Введите пароль">
         </div>
         <div class="form-group">
             <label for="ConfirmPassword">Подтверждение пароля</label>
-            <input type="password" class="form-control" id="ConfirmPassword" placeholder="Введите пароль ещё раз">
+            <input type="password" class="form-control" name="confPassword" id="ConfirmPassword" placeholder="Введите пароль ещё раз">
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="Check">
@@ -31,4 +35,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
+    <label id="err">{{ err }}</label>
 {% endblock %}

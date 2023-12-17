@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <p>Неверное имя пользователя или пароль, пожалуйста проверьте.</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}" class="content">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.username.label_tag }}
+            <input type="nick" class="form-control" {{ form.username }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label_tag }}
+            <input type="password" class="form-control" {{ form.password }}
+        </div>
+        <input type="submit" value="Войти"/>
+    </form>
+{% endblock %}
