@@ -24,9 +24,9 @@ from project import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('registration/', views.registration),
-    path('profile/', views.profile),
-    path('logout/', auth_Views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
+    path('registration/', views.registration, name='registration'),
+    path('accounts/profile/', views.profile, name='profile'),
+    path('accounts/logout/', views.logout, name='logout'),
 
 ]
 

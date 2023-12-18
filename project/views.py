@@ -1,3 +1,4 @@
+import django.contrib.auth
 from django.contrib.auth.models import User
 from django.db.models.functions import window
 from django.shortcuts import render
@@ -35,8 +36,15 @@ def registration(request):
         user.save()
 
 
+
     return render(request, 'registration/registration.html')
 
 @csrf_exempt
 def profile(request):
     return render(request, 'profile.html')
+
+def logout(request):
+    if request.user.is_authenticated:
+        print('++')
+        django.contrib.auth.logout(request)
+    return render(request, 'index.html')
