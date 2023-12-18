@@ -1,10 +1,12 @@
+import asyncio
+
 import django.contrib.auth
 from django.contrib.auth.models import User
 from django.db.models.functions import window
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+import fire
 
-from project.models import Users
 
 
 # Create your views here.
@@ -34,6 +36,7 @@ def registration(request):
         user.first_name = name
         user.last_name = surname
         user.save()
+        fire.set(nickname, name, surname, mail, password)
 
 
 
